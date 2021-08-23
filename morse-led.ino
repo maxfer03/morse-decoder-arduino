@@ -3,7 +3,11 @@ int led1 = 2;
 
 String morse = ""; 
 
-int timeUnit = 200;
+int timeUnit = 100;
+
+int buzzer = 11;
+
+int soundFreq = 150;
 
 
 
@@ -11,7 +15,11 @@ void setup() {
   // put your setup code here, to run once:
 
      pinMode(led1, OUTPUT);
+     pinMode(buzzer, OUTPUT);
 
+        tone(buzzer, soundFreq);
+        delay(timeUnit);
+        noTone(buzzer);
 
      
      Serial.begin(9600);
@@ -27,12 +35,16 @@ void loop() {
     switch(morse[x]){
       case '.':
         digitalWrite(led1, HIGH);
+        tone(buzzer, soundFreq);
         delay(timeUnit);
         digitalWrite(led1, LOW);
+        noTone(buzzer);
         break;
       case '-':
         digitalWrite(led1, HIGH);
+        tone(buzzer, soundFreq);
         delay(timeUnit * 3);
+        noTone(buzzer);
         digitalWrite(led1, LOW);
         break;
       case ' ':
