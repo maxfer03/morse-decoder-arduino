@@ -1,4 +1,4 @@
-# morse-decoder-arduino
+# morse-reader-arduino
 After playing around for some hours with an old arduino, I decided to try and create my own program from scratch. This program reads input from the serial monitor and reproduces it using an LED light.
 
 To run it, simply open it with the Arduino IDE.
